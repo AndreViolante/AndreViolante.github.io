@@ -1,0 +1,12 @@
+.box {
+  width: 2007px;
+  height: 2637px;
+}
+
+.box .home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2007px;
+  height: 2637px;
+}
