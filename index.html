@@ -36,58 +36,75 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout ── */
     .site-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 clamp(1.5rem, 4vw, 4rem);
     }
 
-    /* ── Header ── */
-    header {
-      padding: clamp(2.5rem, 5vw, 5rem) 0 clamp(1.5rem, 3vw, 3rem);
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
+    /* ── Fullscreen Hero ── */
+    .hero-full {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
     }
 
-    .name {
+    .hero-full iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 56.25vw;
+      min-height: 100vh;
+      min-width: 177.78vh;
+      border: none;
+      pointer-events: none;
+    }
+
+    .hero-credit {
+      position: absolute;
+      bottom: clamp(2rem, 4vw, 3.5rem);
+      left: clamp(1.5rem, 4vw, 4rem);
+      z-index: 10;
+    }
+
+    .hero-name {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 500;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.8rem);
       letter-spacing: -0.02em;
-      color: var(--text-primary);
+      color: #f0ece4;
+      line-height: 1;
     }
 
-    .title-block {
-      text-align: right;
-    }
-
-    .title-block .role {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .title-block .discipline {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 300;
-      font-style: normal;
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* ── Hero video ── */
-    .hero {
-      padding: clamp(2.5rem, 5vw, 5rem) 0;
+    /* ── Intro ── */
+    .intro {
+      padding: clamp(3rem, 6vw, 6rem) 0;
       border-bottom: 1px solid var(--border);
     }
 
+    .intro-role {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .intro-bio {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 60ch;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Project video frames ── */
     .video-frame {
       position: relative;
       width: 100%;
@@ -118,22 +135,17 @@
     /* ── Project row ── */
     .project {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.6fr;
       gap: clamp(2rem, 4vw, 5rem);
-      align-items: start;
+      align-items: center;
       padding: clamp(2.5rem, 4vw, 4rem) 0;
       border-top: 1px solid var(--border);
-      transition: border-color 0.3s;
     }
 
     .project:last-child { border-bottom: 1px solid var(--border); }
 
     .project-meta { order: 1; }
     .project-video { order: 2; }
-
-    /* Alternate layout: odd projects have video on left */
-    .project:nth-child(odd) .project-meta { order: 2; }
-    .project:nth-child(odd) .project-video { order: 1; }
 
     .project-client {
       font-size: 10px;
@@ -235,8 +247,6 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
-      .project-meta { order: 2 !important; }
-      .project-video { order: 1 !important; }
 
       .project-desc { max-width: none; }
       .project-role-detail { max-width: none; }
@@ -251,22 +261,20 @@
 </head>
 <body>
 
+  <!-- ── Fullscreen Hero ── -->
+  <section class="hero-full">
+    <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <div class="hero-credit">
+      <div class="hero-name">André Violante Ferreira</div>
+    </div>
+  </section>
+
 <div class="site-wrapper">
 
-  <!-- ── Header ── -->
-  <header>
-    <div class="name">André Violante Ferreira</div>
-    <div class="title-block">
-      <div class="role">Technical Producer / Technical Director</div>
-      <div class="discipline">Broadcast, Experiential &amp; Events</div>
-    </div>
-  </header>
-
-  <!-- ── Hero ── -->
-  <section class="hero">
-    <div class="video-frame">
-      <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    </div>
+  <!-- ── Intro ── -->
+  <section class="intro">
+    <div class="intro-role">Technical Producer / Technical Director — Broadcast, Experiential &amp; Events</div>
+    <p class="intro-bio">Placeholder sentence one describing your background, approach, and the kind of work you do. Placeholder sentence two expanding on your expertise and what makes your work distinctive.</p>
   </section>
 
   <!-- ── Selected Work ── -->
