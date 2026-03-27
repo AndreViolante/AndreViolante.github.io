@@ -83,7 +83,6 @@
     /* ── Intro ── */
     .intro {
       padding: clamp(3rem, 6vw, 6rem) 0;
-      border-bottom: 1px solid var(--border);
     }
 
     .intro-role {
@@ -121,7 +120,7 @@
 
     /* ── Works section ── */
     .works {
-      padding: clamp(3rem, 6vw, 6rem) 0;
+      padding: clamp(3rem, 6vw, 6rem) 0 3rem;
     }
 
     .section-label {
@@ -129,23 +128,31 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
+      padding-bottom: clamp(2rem, 4vw, 4rem);
+      border-bottom: 1px solid var(--border);
       margin-bottom: clamp(2rem, 4vw, 4rem);
     }
 
     /* ── Project row ── */
     .project {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: clamp(2rem, 4vw, 5rem);
-      align-items: center;
       padding: clamp(2.5rem, 4vw, 4rem) 0;
-      border-top: 1px solid var(--border);
     }
 
-    .project:last-child { border-bottom: 1px solid var(--border); }
+    .project:last-child { border-bottom: none; }
 
-    .project-meta { order: 1; }
-    .project-video { order: 2; }
+    .project-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-body {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: clamp(2rem, 4vw, 5rem);
+      align-items: center;
+    }
+
+    .project-video { order: 1; }
+    .project-meta { order: 2; }
 
     .project-client {
       font-size: 10px;
@@ -171,7 +178,7 @@
       color: var(--text-secondary);
       line-height: 1.8;
       margin-bottom: 1.6rem;
-      max-width: 38ch;
+      text-align: justify;
     }
 
     .project-role-label {
@@ -188,12 +195,13 @@
       font-size: 12px;
       color: var(--text-secondary);
       line-height: 1.75;
-      max-width: 36ch;
+      text-align: justify;
     }
 
     /* ── Footer ── */
     footer {
       padding: clamp(2rem, 4vw, 4rem) 0;
+      margin-top: 3rem;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -253,10 +261,12 @@
       }
       .title-block { text-align: left; }
 
-      .project {
+      .project-body {
         grid-template-columns: 1fr;
         gap: 1.5rem;
       }
+      .project-video { order: 1; }
+      .project-meta { order: 2; }
 
       .project-desc { max-width: none; }
       .project-role-detail { max-width: none; }
@@ -293,60 +303,60 @@
 
     <!-- Project 1: A24 -->
     <div class="project">
-      <div class="project-meta">
+      <div class="project-header">
         <div class="project-client">A24</div>
         <h2 class="project-title">Marty Supreme<br>Zoom Call</h2>
-        <p class="project-desc">
-          A viral marketing video presented as a "leaked" internal brand meeting featuring Timothée Chalamet pitching increasingly absurd and grandiose ideas for his film Marty Supreme.
-        </p>
-        <div class="project-role-label">Role</div>
-        <div class="project-role-detail">
-          Technical Producer, Assistant Director — Managed remote video production studio pulling ten separate 1080p feeds from around the world. Directed pick-up shots and assisted talent with technical needs.
-        </div>
       </div>
-      <div class="project-video">
-        <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <div class="project-body">
+        <div class="project-video">
+          <div class="video-frame">
+            <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="project-meta">
+          <p class="project-desc">A viral marketing video presented as a "leaked" internal brand meeting featuring Timothée Chalamet pitching increasingly absurd and grandiose ideas for his film Marty Supreme.</p>
+          <div class="project-role-label">Role</div>
+          <div class="project-role-detail">Technical Producer, Assistant Director — Managed remote video production studio pulling ten separate 1080p feeds from around the world. Directed pick-up shots and assisted talent with technical needs.</div>
         </div>
       </div>
     </div>
 
     <!-- Project 2: Dua Lipa -->
     <div class="project">
-      <div class="project-meta">
+      <div class="project-header">
         <div class="project-client">Dua Lipa</div>
         <h2 class="project-title">Live in Times Square</h2>
-        <p class="project-desc">
-          A surprise, free performance out of a semi trailer to celebrate the release of her third studio album, Radical Optimism. Streamed online and to most screens around Times Square.
-        </p>
-        <div class="project-role-label">Role</div>
-        <div class="project-role-detail">
-          Producer: Live Event Video, Content &amp; Broadcast — Designed event and camera layout, multi-endpoint transmission plan, budget, and vendors. Managed content and live signals sent to a dozen uniquely shaped LED billboards. Oversaw camera crew, mobile satellite truck production, and content capture team.
-        </div>
       </div>
-      <div class="project-video">
-        <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <div class="project-body">
+        <div class="project-video">
+          <div class="video-frame">
+            <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="project-meta">
+          <p class="project-desc">A surprise, free performance out of a semi trailer to celebrate the release of her third studio album, Radical Optimism. Streamed online and to most screens around Times Square.</p>
+          <div class="project-role-label">Role</div>
+          <div class="project-role-detail">Producer: Live Event Video, Content &amp; Broadcast — Designed event and camera layout, multi-endpoint transmission plan, budget, and vendors. Managed content and live signals sent to a dozen uniquely shaped LED billboards. Oversaw camera crew, mobile satellite truck production, and content capture team.</div>
         </div>
       </div>
     </div>
 
     <!-- Project 3: Nike -->
     <div class="project">
-      <div class="project-meta">
+      <div class="project-header">
         <div class="project-client">Nike</div>
         <h2 class="project-title">SNKRS Live</h2>
-        <p class="project-desc">
-          Interactive live stream programming within the Nike SNKRS App that connects the sneaker community through exclusive content, product reveals, and real-time engagement.
-        </p>
-        <div class="project-role-label">Role</div>
-        <div class="project-role-detail">
-          Design, build, and maintenance of Nike's S23 Studio in New York — including a custom talkback and communication system. Technical Director on over 100 successful live shows to the SNKRS App.
-        </div>
       </div>
-      <div class="project-video">
-        <div class="video-frame">
-          <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <div class="project-body">
+        <div class="project-video">
+          <div class="video-frame">
+            <iframe src="https://player.vimeo.com/video/1176348566?h=8301e6ba2a&autoplay=1&muted=1&controls=0&loop=1&background=1" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="project-meta">
+          <p class="project-desc">Interactive live stream programming within the Nike SNKRS App that connects the sneaker community through exclusive content, product reveals, and real-time engagement.</p>
+          <div class="project-role-label">Role</div>
+          <div class="project-role-detail">Design, build, and maintenance of Nike's S23 Studio in New York — including a custom talkback and communication system. Technical Director on over 100 successful live shows to the SNKRS App.</div>
         </div>
       </div>
     </div>
