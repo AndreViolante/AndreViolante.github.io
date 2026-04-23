@@ -293,7 +293,7 @@
 
   <!-- ── Fullscreen Hero ── -->
   <section class="hero-full">
-    <iframe src="https://player.mediadelivery.net/embed/628083/e4467491-d7f9-4c55-bb64-20cf9b3d2d1e?autoplay=true&loop=true&muted=true&preload=true&playsinline=true" allow="autoplay;encrypted-media;picture-in-picture;playsinline" allowfullscreen></iframe>
+    <iframe src="https://player.mediadelivery.net/embed/628083/e4467491-d7f9-4c55-bb64-20cf9b3d2d1e?autoplay=true&loop=true&muted=true&preload=true" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen></iframe>
     <div class="hero-credit">
       <div class="hero-name">André Violante Ferreira</div>
     </div>
@@ -324,7 +324,7 @@
       </div>
       <div class="project-video">
         <div class="video-frame">
-          <iframe src="https://player.mediadelivery.net/embed/628083/7421c8ce-e6af-4788-afe3-71b3b86f9f25?autoplay=true&loop=true&muted=true&preload=true&playsinline=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media;picture-in-picture;playsinline" allowfullscreen="true"></iframe>
+          <iframe src="https://player.mediadelivery.net/embed/628083/7421c8ce-e6af-4788-afe3-71b3b86f9f25?autoplay=true&loop=true&muted=true&preload=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -342,7 +342,7 @@
       </div>
       <div class="project-video">
         <div class="video-frame">
-          <iframe src="https://player.mediadelivery.net/embed/628083/f0bc3368-e0e7-428b-b4fc-c02e937d66bf?autoplay=true&loop=true&muted=true&preload=true&playsinline=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media;picture-in-picture;playsinline" allowfullscreen="true"></iframe>
+          <iframe src="https://player.mediadelivery.net/embed/628083/f0bc3368-e0e7-428b-b4fc-c02e937d66bf?autoplay=true&loop=true&muted=true&preload=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -360,7 +360,7 @@
       </div>
       <div class="project-video">
         <div class="video-frame">
-          <iframe src="https://player.mediadelivery.net/embed/628083/add88688-ff63-4775-ab6e-e6adc1c09ed1?autoplay=true&loop=true&muted=true&preload=true&playsinline=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media;picture-in-picture;playsinline" allowfullscreen="true"></iframe>
+          <iframe src="https://player.mediadelivery.net/embed/628083/add88688-ff63-4775-ab6e-e6adc1c09ed1?autoplay=true&loop=true&muted=true&preload=true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
         </div>
       </div>
     </div>
@@ -376,3 +376,15 @@
       <a href="https://instagram.com/wavdwgs" target="_blank">@wavdwgs</a>
     </div>
   </footer>
+
+  <script src="https://assets.mediadelivery.net/playerjs/player-0.1.0.min.js"></script>
+  <script>
+    document.querySelectorAll('iframe').forEach(function(iframe) {
+      var player = new playerjs.Player(iframe);
+      player.on('ready', function() {
+        player.mute();
+        player.play();
+      });
+    });
+  </script>
+</body>
