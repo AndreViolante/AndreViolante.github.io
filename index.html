@@ -130,33 +130,30 @@
       color: var(--text-muted);
       padding-bottom: clamp(1rem, 2vw, 2rem);
       border-bottom: 1px solid var(--border);
-      margin-bottom: clamp(1rem, 2vw, 2rem);
+      margin-bottom: clamp(0.5rem, 1vw, 1rem);
     }
 
     /* ── Project row ── */
     .project {
       display: grid;
       grid-template-columns: 1fr 1.8fr;
-      grid-template-areas:
-        "title title"
-        "meta  video";
       gap: clamp(1rem, 2vw, 2.5rem);
-      align-items: center;
-      padding: clamp(1.25rem, 2vw, 2rem) 0;
+      align-items: start;
+      padding: clamp(3.75rem, 6vw, 6rem) 0;
     }
 
     .project:last-child { border-bottom: none; }
 
     .project-title-block {
-      grid-area: title;
+      display: contents;
     }
 
     .project-meta {
-      grid-area: meta;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-video {
-      grid-area: video;
     }
 
     .project-client {
@@ -204,7 +201,7 @@
     /* ── Footer ── */
     footer {
       padding: clamp(2rem, 4vw, 4rem) 0;
-      margin-top: 3rem;
+      margin-top: 1.5rem;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -279,8 +276,8 @@
       }
       
       .project {
-        padding-left: clamp(1.5rem, 4vw, 4rem);
-        padding-right: clamp(1.5rem, 4vw, 4rem);
+        padding-left: 0;
+        padding-right: 0;
       }
       
       header {
@@ -291,15 +288,21 @@
 
       .project {
         grid-template-columns: 1fr;
-        grid-template-areas:
-          "title"
-          "video"
-          "meta";
         gap: 1.5rem;
+        align-items: center;
+        padding: clamp(2.5rem, 4vw, 4rem) clamp(1.5rem, 4vw, 4rem);
       }
 
-      .project-desc { max-width: none; }
-      .project-role-detail { max-width: none; }
+      .project-meta { order: 2; }
+      .project-video { order: 1; }
+
+      .section-label {
+        margin-bottom: clamp(0.375rem, 0.75vw, 0.75rem);
+      }
+
+      footer {
+        margin-top: 1.5rem;
+      }
 
       footer {
         flex-direction: column;
@@ -333,11 +336,9 @@
 
     <!-- Project 1: A24 -->
     <div class="project">
-      <div class="project-title-block">
+      <div class="project-meta">
         <div class="project-client">A24</div>
         <h2 class="project-title">Marty Supreme<br>Zoom Call</h2>
-      </div>
-      <div class="project-meta">
         <p class="project-desc">A viral marketing video presented as a "leaked" internal brand meeting featuring Timothée Chalamet pitching increasingly absurd and grandiose ideas for his film Marty Supreme.</p>
         <div class="project-role-label">Role</div>
         <div class="project-role-detail">Technical Producer, Assistant Director — Managed remote video production studio pulling ten separate 1080p feeds from around the world. Directed pick-up shots and assisted talent with technical needs.</div>
@@ -351,11 +352,9 @@
 
     <!-- Project 2: Dua Lipa -->
     <div class="project">
-      <div class="project-title-block">
+      <div class="project-meta">
         <div class="project-client">Dua Lipa</div>
         <h2 class="project-title">Live in Times Square</h2>
-      </div>
-      <div class="project-meta">
         <p class="project-desc">A surprise, free performance out of a semi trailer to celebrate the release of her third studio album, Radical Optimism. Streamed online and to most screens around Times Square.</p>
         <div class="project-role-label">Role</div>
         <div class="project-role-detail">Producer: Live Event Video, Content &amp; Broadcast — Designed event and camera layout, multi-endpoint transmission plan, budget, and vendors. Managed content and live signals sent to a dozen uniquely shaped LED billboards. Oversaw camera crew, mobile satellite truck production, and content capture team.</div>
@@ -369,11 +368,9 @@
 
     <!-- Project 3: Nike -->
     <div class="project">
-      <div class="project-title-block">
+      <div class="project-meta">
         <div class="project-client">Nike</div>
         <h2 class="project-title">SNKRS Live</h2>
-      </div>
-      <div class="project-meta">
         <p class="project-desc">Interactive live stream programming within the Nike SNKRS App that connects the sneaker community through exclusive content, product reveals, and real-time engagement.</p>
         <div class="project-role-label">Role</div>
         <div class="project-role-detail">Architect and operator of Nike's S23 Studio in New York, featuring a custom-built talkback and communications system. Technical Director on over 100 successful live shows to the SNKRS App.</div>
