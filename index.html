@@ -198,7 +198,86 @@
       line-height: 1.75;
     }
 
-    /* ── Footer ── */
+    /* ── Cap sections ── */
+    .cap {
+      padding: clamp(3rem, 6vw, 6rem) 0 0;
+      margin-top: clamp(3rem, 6vw, 6rem);
+    }
+
+    .cap-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: clamp(1rem, 2vw, 2rem);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: clamp(1rem, 2vw, 2rem);
+    }
+
+    /* Capabilities */
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      padding-bottom: clamp(3rem, 6vw, 6rem);
+    }
+
+    .capability-item {}
+
+    .capability-title {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .capability-desc {
+      font-size: clamp(13px, 1vw, 15px);
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* Competency */
+    .competency {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(2rem, 3vw, 3rem);
+      padding-bottom: clamp(3rem, 6vw, 6rem);
+    }
+
+    .competency-item {}
+
+    .competency-category {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 0.6rem;
+    }
+
+    .competency-list {
+      font-size: clamp(12px, 0.95vw, 14px);
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+
+    @media (max-width: 680px) {
+      .capabilities {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .competency {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
     footer {
       padding: clamp(2rem, 4vw, 4rem) 0;
       margin-top: 1.5rem;
@@ -383,6 +462,87 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ── Capabilities ── -->
+  <section class="cap">
+    <div class="cap-label">Capabilities</div>
+    <div class="capabilities">
+
+      <div class="capability-item">
+        <h3 class="capability-title">Technical Producer</h3>
+        <p class="capability-desc">Responsible for scope, budget, and coordination of technical production. Ensures the technical plan serves the creative vision from pre-production through delivery.</p>
+      </div>
+
+      <div class="capability-item">
+        <h3 class="capability-title">Technical Director</h3>
+        <p class="capability-desc">Leads the technical team from pre-production to execution on-site. Experienced across live streaming, broadcast, concerts, corporate events, and experiential.</p>
+      </div>
+
+      <div class="capability-item">
+        <h3 class="capability-title">Streaming Engineer</h3>
+        <p class="capability-desc">Design, build, and operate broadcast infrastructure for live and studio environments. Experienced in multi-location remote production, field operations, and mobile broadcast.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Competency ── -->
+  <section class="cap">
+    <div class="cap-label">Competency</div>
+    <div class="competency">
+
+      <div class="competency-item">
+        <div class="competency-category">Broadcast</div>
+        <div class="competency-list">vMix<br>Blackmagic Switchers<br>LiveU<br>Bitfocus Companion</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Camera</div>
+        <div class="competency-list">Sony FX<br>Blackmagic Studio</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Video</div>
+        <div class="competency-list">Resolume Arena<br>Madmapper<br>DaVinci Resolve<br>Premiere Pro</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Audio</div>
+        <div class="competency-list">Midas M32 Series<br>Yamaha DM Series<br>Ableton Live<br>RX11</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">RF</div>
+        <div class="competency-list">Shure Axient<br>Lectrosonics</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Lighting</div>
+        <div class="competency-list">MA2<br>Chamsys MagicQ Series<br>Enttec ELM<br>Madrix<br>Advatek Pixlite</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">IT</div>
+        <div class="competency-list">AV over IP<br>Ubiquiti Unifi<br>Netgear AV Line<br>Dante Level 3</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Productivity</div>
+        <div class="competency-list">Claude<br>ChatGPT<br>Notion<br>Google Workspace<br>Microsoft 365<br>Zoom</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">CAD</div>
+        <div class="competency-list">Vectorworks Spotlight<br>Unreal Engine</div>
+      </div>
+
+      <div class="competency-item">
+        <div class="competency-category">Language</div>
+        <div class="competency-list">Portuguese<br>Spanish</div>
+      </div>
+
+    </div>
   </section>
 
   <!-- ── Footer ── -->
